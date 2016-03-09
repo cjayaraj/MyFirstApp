@@ -1,0 +1,2148 @@
+  [1m[36m (107.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (99.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateResumes (20160309045757)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "resumes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "attachment" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160309045757"]]
+  [1m[35m (115.4ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-09 10:31:26 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/railties-4.2.5.1/lib/rails/templates/rails/welcome/index.html.erb (10.0ms)
+Completed 200 OK in 83ms (Views: 54.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-09 10:49:19 +0530
+
+ActionController::RoutingError (uninitialized constant WelcomeController):
+  activesupport (4.2.5.1) lib/active_support/inflector/methods.rb:261:in `const_get'
+  activesupport (4.2.5.1) lib/active_support/inflector/methods.rb:261:in `block in constantize'
+  activesupport (4.2.5.1) lib/active_support/inflector/methods.rb:259:in `each'
+  activesupport (4.2.5.1) lib/active_support/inflector/methods.rb:259:in `inject'
+  activesupport (4.2.5.1) lib/active_support/inflector/methods.rb:259:in `constantize'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:70:in `controller_reference'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:60:in `controller'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:39:in `serve'
+  actionpack (4.2.5.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5.1) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.5.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:815:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5.1) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/dess/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/dess/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/dess/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (33.7ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (67.6ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (99.6ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (113.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-09 11:21:58 +0530
+Processing by ResumesController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NameError (uninitialized constant Resume::AttachmentUploader):
+  app/models/resume.rb:2:in `<class:Resume>'
+  app/models/resume.rb:1:in `<top (required)>'
+  app/controllers/resumes_controller.rb:3:in `index'
+
+
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (8.7ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (19.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-09 11:24:58 +0530
+Processing by ResumesController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NameError (uninitialized constant Resume::AttachmentUploader):
+  app/models/resume.rb:2:in `<class:Resume>'
+  app/models/resume.rb:1:in `<top (required)>'
+  app/controllers/resumes_controller.rb:3:in `index'
+
+
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.8ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (12.5ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (9.0ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (20.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-09 11:28:20 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ResumesController#index as HTML
+  [1m[35mResume Load (0.2ms)[0m  SELECT "resumes".* FROM "resumes"
+  Rendered resumes/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 3995ms (Views: 3985.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 11:28:25 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 11:28:25 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 11:28:30 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (145.7ms)
+Completed 200 OK in 162ms (Views: 157.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/resumes" for 127.0.0.1 at 2016-03-09 11:30:39 +0530
+Processing by ResumesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YzGMcfIP2R+LGv6JWyxy6s+I7YXVqxy477s5EbhQHz+X1pE8wohiiz4H+NbJl+3EIDhfM9VmXTrq9baPWhHkug==", "resume"=>{"name"=>"resume", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x007f36212ef438 @tempfile=#<Tempfile:/tmp/RackMultipart20160309-28990-4mbjmj.png>, @original_filename="HadoopBigDataCertification.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"resume[attachment]\"; filename=\"HadoopBigDataCertification.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered resumes/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 53ms (Views: 14.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-09 11:48:34 +0530
+Processing by ResumesController#index as HTML
+  [1m[36mResume Load (0.1ms)[0m  [1mSELECT "resumes".* FROM "resumes"[0m
+  Rendered resumes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 104ms (Views: 103.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 11:48:38 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/resumes" for 127.0.0.1 at 2016-03-09 11:49:28 +0530
+Processing by ResumesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6yiNZKQrc3zz51rAL0/PabR1MZcnRFb+LwOGQmHEBlQfz5AplKzI6Eb6XJ+99FBHW8WDISeJF3wqTQncg4X90Q==", "resume"=>{"name"=>"My resume", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x007f36213351e0 @tempfile=#<Tempfile:/tmp/RackMultipart20160309-28990-130cd0k.doc>, @original_filename="754402_Resume.doc", @content_type="application/msword", @headers="Content-Disposition: form-data; name=\"resume[attachment]\"; filename=\"754402_Resume.doc\"\r\nContent-Type: application/msword\r\n">}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (72.7ms)[0m  [1mINSERT INTO "resumes" ("name", "attachment", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My resume"], ["attachment", "754402_Resume.doc"], ["created_at", "2016-03-09 06:19:29.044336"], ["updated_at", "2016-03-09 06:19:29.044336"]]
+  [1m[35m (117.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/resumes
+Completed 302 Found in 320ms (ActiveRecord: 190.0ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 11:49:29 +0530
+Processing by ResumesController#index as HTML
+  [1m[36mResume Load (0.1ms)[0m  [1mSELECT "resumes".* FROM "resumes"[0m
+  Rendered resumes/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/resumes/1" for 127.0.0.1 at 2016-03-09 11:49:46 +0530
+Processing by ResumesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"OvDdqb7rXEqkU8HrBdN95QBmdnd2ZqCVWkgKq1fliGrOF8Dkjmzn3hFOx7SXaOLL79bEwXar4RdfBoU1taRz7w==", "id"=>"1"}
+  [1m[35mResume Load (0.2ms)[0m  SELECT  "resumes".* FROM "resumes" WHERE "resumes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "resumes" WHERE "resumes"."id" = ?  [["id", 1]]
+  [1m[36m (101.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/resumes
+Completed 302 Found in 243ms (ActiveRecord: 101.9ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 11:49:46 +0530
+Processing by ResumesController#index as HTML
+  [1m[35mResume Load (0.1ms)[0m  SELECT "resumes".* FROM "resumes"
+  Rendered resumes/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 11:51:29 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 64ms (Views: 63.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/resumes" for 127.0.0.1 at 2016-03-09 11:51:32 +0530
+Processing by ResumesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f4t7OJCpbNoOqbEQc44B2vE8qr1+4jRfR4bkbu9t2e6LbGZ1oC7XTru0t0/hNZ70HowYC34vdd1CyGvwDSwiaw==", "resume"=>{"name"=>""}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered resumes/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 16ms (Views: 12.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 11:51:59 +0530
+Processing by ResumesController#index as HTML
+  [1m[36mResume Load (0.2ms)[0m  [1mSELECT "resumes".* FROM "resumes"[0m
+  Rendered resumes/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 17ms (Views: 13.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 11:52:02 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 17ms (Views: 12.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/resumes" for 127.0.0.1 at 2016-03-09 11:52:04 +0530
+Processing by ResumesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yl1ZmRHkdRlTPMBa3D1DmXkqWSnl9SC6Ez/Zj3tUnuE+ukTUIWPOjeYhxgVOhty3lprrn+U4YTgWcVYRmRVlZA==", "resume"=>{"name"=>""}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "resumes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", ""], ["created_at", "2016-03-09 06:22:04.643456"], ["updated_at", "2016-03-09 06:22:04.643456"]]
+  [1m[35m (108.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/resumes
+Completed 302 Found in 113ms (ActiveRecord: 109.2ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 11:52:04 +0530
+Processing by ResumesController#index as HTML
+  [1m[36mResume Load (0.2ms)[0m  [1mSELECT "resumes".* FROM "resumes"[0m
+  Rendered resumes/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 68ms (Views: 67.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 11:52:07 +0530
+Processing by ResumesController#index as HTML
+  [1m[35mResume Load (0.1ms)[0m  SELECT "resumes".* FROM "resumes"
+  Rendered resumes/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/resumes/2" for 127.0.0.1 at 2016-03-09 11:52:09 +0530
+Processing by ResumesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Ol13vDiPNpSblSTDryOuGI0ZyhokRWYiWRmX0iEELD7OumrxCAiNAC6IIpw9mDE2Yql4rCSIJ6BcVxhMw0XXuw==", "id"=>"2"}
+  [1m[36mResume Load (0.2ms)[0m  [1mSELECT  "resumes".* FROM "resumes" WHERE "resumes"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "resumes" WHERE "resumes"."id" = ?[0m  [["id", 2]]
+  [1m[35m (132.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/resumes
+Completed 302 Found in 135ms (ActiveRecord: 133.0ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 11:52:10 +0530
+Processing by ResumesController#index as HTML
+  [1m[36mResume Load (0.1ms)[0m  [1mSELECT "resumes".* FROM "resumes"[0m
+  Rendered resumes/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 11:52:11 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 11:54:56 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 25ms (Views: 18.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/resumes" for 127.0.0.1 at 2016-03-09 11:55:03 +0530
+Processing by ResumesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"deC3/o35RfVHt3Q3Ky9PdGtPs/bNHDM2l9QzhrR+pQ6BB6qzvX7+YfKqcmi5lNBahP8BQM3RcrSSmrwYVj9eiw==", "resume"=>{"name"=>""}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered resumes/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 70ms (Views: 65.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/resumes" for 127.0.0.1 at 2016-03-09 11:55:10 +0530
+Processing by ResumesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GIV9wn97pouAT1MgIRLyzpP7ozZjUh5cs/TNwofayq7sYmCPT/wdHzVSVX+zqW3gfEsRgGOfX962ukJcZZsxKw==", "resume"=>{"name"=>"e"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered resumes/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 18ms (Views: 15.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/resumes" for 127.0.0.1 at 2016-03-09 11:55:29 +0530
+Processing by ResumesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GIV9wn97pouAT1MgIRLyzpP7ozZjUh5cs/TNwofayq7sYmCPT/wdHzVSVX+zqW3gfEsRgGOfX962ukJcZZsxKw==", "resume"=>{"name"=>"e"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered resumes/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 25ms (Views: 15.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 11:55:29 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 11:55:29 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 11:55:29 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 11:55:29 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 11:55:29 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 11:55:29 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 11:55:29 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-09 11:55:34 +0530
+Processing by ResumesController#index as HTML
+  [1m[35mResume Load (0.2ms)[0m  SELECT "resumes".* FROM "resumes"
+  Rendered resumes/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 11:55:36 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 62ms (Views: 61.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/resumes" for 127.0.0.1 at 2016-03-09 11:55:37 +0530
+Processing by ResumesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uOYyKiT+jTnaNuv9LdcR09HtnDThR3AlOO/gDZorXaNMAS9nFHk2rW8r7aK/bI79Pl0uguGKMac9oW+TeGqmJg==", "resume"=>{"name"=>""}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered resumes/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 16ms (Views: 12.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/resumes" for 127.0.0.1 at 2016-03-09 11:55:42 +0530
+Processing by ResumesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oSjYPYGYgv8l9GtFgitc6wN/48+PLekLOq97SLdPTQtVz8VwsR85a5DpbRoQkMPF7M9ReY/gqIk/4fTWVQ62jg==", "resume"=>{"name"=>"q"}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered resumes/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 16ms (Views: 13.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/resumes" for 127.0.0.1 at 2016-03-09 11:55:45 +0530
+Processing by ResumesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lk+SbMLrpuomL94yefMZqXL76Odj1lX2S0GxELxdcK9iqI8h8mwdfpMy2G3rSIaHnUtaUWMbFHRODz6OXhyLKg==", "resume"=>{"name"=>"qqq"}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered resumes/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 18ms (Views: 14.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/resumes" for 127.0.0.1 at 2016-03-09 11:55:49 +0530
+Processing by ResumesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GS8lGafGESR+kPeagS7JdsRRNz4UWJDdoMI13Lrupc3tyDhUl0GqsMuN8cUTlVZYK+GFiBSV0V+ljLpCWK9eSA==", "resume"=>{"name"=>"qqqqqq"}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "resumes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "qqqqqq"], ["created_at", "2016-03-09 06:25:49.544884"], ["updated_at", "2016-03-09 06:25:49.544884"]]
+  [1m[36m (195.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/resumes
+Completed 302 Found in 200ms (ActiveRecord: 196.1ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 11:55:49 +0530
+Processing by ResumesController#index as HTML
+  [1m[35mResume Load (0.1ms)[0m  SELECT "resumes".* FROM "resumes"
+  Rendered resumes/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 11:55:51 +0530
+Processing by ResumesController#index as HTML
+  [1m[36mResume Load (0.1ms)[0m  [1mSELECT "resumes".* FROM "resumes"[0m
+  Rendered resumes/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/resumes/3" for 127.0.0.1 at 2016-03-09 11:55:53 +0530
+Processing by ResumesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"fZuBDo9wDp7zp4idKzXLEwEMZr/wWQHqN52NqFPRptmJfJxDv/e1Cka6jsK5jlQ97rzUCfCUQGgy0wI2sZBdXA==", "id"=>"3"}
+  [1m[35mResume Load (0.2ms)[0m  SELECT  "resumes".* FROM "resumes" WHERE "resumes"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "resumes" WHERE "resumes"."id" = ?  [["id", 3]]
+  [1m[36m (84.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/resumes
+Completed 302 Found in 88ms (ActiveRecord: 85.1ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 11:55:53 +0530
+Processing by ResumesController#index as HTML
+  [1m[35mResume Load (0.1ms)[0m  SELECT "resumes".* FROM "resumes"
+  Rendered resumes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 67ms (Views: 66.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 11:55:55 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:02:43 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:43 +0530
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:43 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:43 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:43 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:43 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:43 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:43 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:02:43 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:43 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:43 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:43 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:43 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:43 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:43 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:43 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 69ms (Views: 68.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:02:44 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 70ms (Views: 69.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 12ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:45 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 72ms (Views: 71.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 14ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:02:46 +0530
+
+
+Started POST "/resumes" for 127.0.0.1 at 2016-03-09 12:02:55 +0530
+Processing by ResumesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5/pWF139g3uamL4POBjf5nFTsodKnLUkhEEfF9N8rTwTHUtabXo47y+FuFCqo0DInuMAMUpR9KaBD5CJMT1WuQ==", "resume"=>{"name"=>"", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x007f36214ee040 @tempfile=#<Tempfile:/tmp/RackMultipart20160309-28990-1epbvvp.doc>, @original_filename="754402_Resume (1).doc", @content_type="application/msword", @headers="Content-Disposition: form-data; name=\"resume[attachment]\"; filename=\"754402_Resume (1).doc\"\r\nContent-Type: application/msword\r\n">}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered resumes/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 17ms (Views: 12.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/resumes" for 127.0.0.1 at 2016-03-09 12:03:04 +0530
+Processing by ResumesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ws0Zwd9a6j3PKPfE64rYQyghD5gJDG8Tp4BYast5NoKuKgSM791RqXo18Zt5MUdtx5G9LgnBLpGiztf0KTjNBw==", "resume"=>{"name"=>"55555555555555555555", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x007f36215ed7e8 @tempfile=#<Tempfile:/tmp/RackMultipart20160309-28990-fcyo9p.doc>, @original_filename="754402_Resume (1).doc", @content_type="application/msword", @headers="Content-Disposition: form-data; name=\"resume[attachment]\"; filename=\"754402_Resume (1).doc\"\r\nContent-Type: application/msword\r\n">}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "resumes" ("name", "attachment", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "55555555555555555555"], ["attachment", "754402_Resume__1_.doc"], ["created_at", "2016-03-09 06:33:04.007732"], ["updated_at", "2016-03-09 06:33:04.007732"]]
+  [1m[36m (168.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/resumes
+Completed 302 Found in 174ms (ActiveRecord: 168.5ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 12:03:04 +0530
+Processing by ResumesController#index as HTML
+  [1m[35mResume Load (0.1ms)[0m  SELECT "resumes".* FROM "resumes"
+  Rendered resumes/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/resumes/4" for 127.0.0.1 at 2016-03-09 12:04:27 +0530
+Processing by ResumesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ppsf295YBxRe6YjB+Vv1vXS3zJ44/V+F+1KRxL19uRNSfAKW7t+8gOv0jp5r4GqTmwd+KDgwHgf+HB5aXzxClg==", "id"=>"4"}
+  [1m[36mResume Load (0.1ms)[0m  [1mSELECT  "resumes".* FROM "resumes" WHERE "resumes"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "resumes" WHERE "resumes"."id" = ?[0m  [["id", 4]]
+  [1m[35m (93.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/resumes
+Completed 302 Found in 97ms (ActiveRecord: 93.7ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 12:04:27 +0530
+Processing by ResumesController#index as HTML
+  [1m[36mResume Load (0.1ms)[0m  [1mSELECT "resumes".* FROM "resumes"[0m
+  Rendered resumes/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 12ms (Views: 11.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:04:32 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:05:23 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:05:23 +0530
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:05:23 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:05:23 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:05:23 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:05:23 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:05:23 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:05:23 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:06:14 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:06:14 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:06:14 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:06:14 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:06:14 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:06:14 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:06:14 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:06:14 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:06:49 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:06:49 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:06:49 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:06:49 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:06:49 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:06:49 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:06:49 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:06:49 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:07:14 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:08:16 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:08:16 +0530
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:08:16 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:08:16 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:08:16 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:08:16 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:08:16 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:08:16 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:08:17 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 70ms (Views: 69.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:08:17 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:08:17 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:08:17 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:08:17 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:08:17 +0530
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:08:17 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:08:17 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:08:17 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:08:17 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:08:17 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:08:17 +0530
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:08:17 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:08:17 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:08:17 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:08:17 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:08:17 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 14ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:08:17 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:08:17 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:08:17 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:08:17 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:08:17 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:08:17 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:08:17 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:09:39 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 69ms (Views: 67.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:09:39 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:09:39 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:09:39 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:09:39 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:09:39 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:09:39 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:09:39 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:10:07 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (15.3ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (wrong number of arguments (0 for 1..2)):
+    11: <% end %>
+    12: 
+    13: <div class = "well">
+    14:    <%= form_for do |f| %>
+    15:       <%= f.label :name %>
+    16:       <%= f.text_field :name %>
+    17:       <%= f.label :asd %>
+  app/views/resumes/new.html.erb:14:in `_app_views_resumes_new_html_erb__3251925528342349056_69935231146600'
+
+
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.7ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (11.8ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (40.6ms)
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:10:08 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (wrong number of arguments (0 for 1..2)):
+    11: <% end %>
+    12: 
+    13: <div class = "well">
+    14:    <%= form_for do |f| %>
+    15:       <%= f.label :name %>
+    16:       <%= f.text_field :name %>
+    17:       <%= f.label :asd %>
+  app/views/resumes/new.html.erb:14:in `_app_views_resumes_new_html_erb__3251925528342349056_69935231146600'
+
+
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.5ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.6ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (8.4ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (18.1ms)
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:10:08 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (wrong number of arguments (0 for 1..2)):
+    11: <% end %>
+    12: 
+    13: <div class = "well">
+    14:    <%= form_for do |f| %>
+    15:       <%= f.label :name %>
+    16:       <%= f.text_field :name %>
+    17:       <%= f.label :asd %>
+  app/views/resumes/new.html.erb:14:in `_app_views_resumes_new_html_erb__3251925528342349056_69935231146600'
+
+
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.5ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (57.5ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (69.7ms)
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:10:09 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (wrong number of arguments (0 for 1..2)):
+    11: <% end %>
+    12: 
+    13: <div class = "well">
+    14:    <%= form_for do |f| %>
+    15:       <%= f.label :name %>
+    16:       <%= f.text_field :name %>
+    17:       <%= f.label :asd %>
+  app/views/resumes/new.html.erb:14:in `_app_views_resumes_new_html_erb__3251925528342349056_69935231146600'
+
+
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (68.8ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (8.8ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (19.0ms)
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:10:27 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:10:27 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:10:27 +0530
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:10:27 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:10:27 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:10:27 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:10:27 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:10:27 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:11:59 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:11:59 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:11:59 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:11:59 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:11:59 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:11:59 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:11:59 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:11:59 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:12:00 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:00 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:00 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:12:00 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:00 +0530
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:12:00 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:00 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:00 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:12:00 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:12:00 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:00 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:00 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:00 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:00 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:12:00 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:00 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:12:01 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:12:01 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:01 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:12:01 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:01 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:01 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:01 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:01 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:12:19 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 72ms (Views: 71.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:12:19 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:12:19 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:19 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:19 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:19 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:19 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:19 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:12:19 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 17ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:19 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:19 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:19 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:12:19 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:19 +0530
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:12:19 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:19 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:12:19 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:12:19 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:12:19 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:19 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:19 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:19 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:19 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:19 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:12:19 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:12:20 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:12:20 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:20 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:20 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:20 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:20 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:20 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:12:20 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 19ms (Views: 18.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:12:20 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:20 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:20 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:12:20 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:20 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:20 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:20 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:12:20 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 22ms (Views: 18.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:12:20 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:12:20 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:20 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:20 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:20 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:20 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:20 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:12:50 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:12:50 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:12:50 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:50 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:50 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:50 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:50 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:12:50 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:13:48 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (54.7ms)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `atent' for #<Resume:0x007f3622b24760>):
+    15:       <%= f.label :name %>
+    16:       <%= f.text_field :name %>
+    17:       <%= f.label :asd %>
+    18:       <%= f.text_field :atent %>
+    19:       <%= f.submit "Save", class: "btn btn-primary" %>
+    20:    <% end %>
+    21: </div>
+  app/views/resumes/new.html.erb:18:in `block in _app_views_resumes_new_html_erb__3251925528342349056_69935243572820'
+  app/views/resumes/new.html.erb:14:in `_app_views_resumes_new_html_erb__3251925528342349056_69935243572820'
+
+
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.7ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (9.8ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (20.4ms)
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:14:06 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:14:07 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:14:07 +0530
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:14:07 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:14:07 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:14:07 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:14:07 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:14:07 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:14:46 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/dess/uploadfile/app/views/resumes/new.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting ')'
+...r.append=( f.label :upload file );@output_buffer.safe_append...
+...                               ^):
+  app/views/resumes/new.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting ')'
+
+
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.0ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (8.6ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (18.1ms)
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:15:08 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:15:08 +0530
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:15:08 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:15:08 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:15:08 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:15:08 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:15:08 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:15:08 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:15:28 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:15:28 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:15:28 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:15:28 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:15:28 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:15:28 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:15:28 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:15:28 +0530
+
+
+Started POST "/resumes" for 127.0.0.1 at 2016-03-09 12:16:07 +0530
+Processing by ResumesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UcZX66X4mNk0WLmOphud99tq7mBUoL/e7SWhMCBj+QilIUqmlX8jTYFFv9E0oALZNNpc1lRt/lzoay6uwiICjQ==", "resume"=>{"name"=>"asa", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x007f362164eed0 @tempfile=#<Tempfile:/tmp/RackMultipart20160309-28990-1fh3ipw.doc>, @original_filename="754402_Resume.doc", @content_type="application/msword", @headers="Content-Disposition: form-data; name=\"resume[attachment]\"; filename=\"754402_Resume.doc\"\r\nContent-Type: application/msword\r\n">}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered resumes/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 18ms (Views: 14.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/resumes" for 127.0.0.1 at 2016-03-09 12:16:12 +0530
+Processing by ResumesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e4C43t89qxemUEvQsKmfwgpROuB4WtXoa0fBkryDMOyPZ6WT77oQgxNNTY8iEgDs5eGIVniXlGpuCU4MXsLLaQ==", "resume"=>{"name"=>"asafsdgs"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "resumes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "asafsdgs"], ["created_at", "2016-03-09 06:46:12.911384"], ["updated_at", "2016-03-09 06:46:12.911384"]]
+  [1m[35m (165.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/resumes
+Completed 302 Found in 168ms (ActiveRecord: 165.3ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 12:16:13 +0530
+Processing by ResumesController#index as HTML
+  [1m[36mResume Load (0.1ms)[0m  [1mSELECT "resumes".* FROM "resumes"[0m
+  Rendered resumes/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 64ms (Views: 62.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 12:16:17 +0530
+Processing by ResumesController#index as HTML
+  [1m[35mResume Load (0.1ms)[0m  SELECT "resumes".* FROM "resumes"
+  Rendered resumes/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 12:16:23 +0530
+Processing by ResumesController#index as HTML
+  [1m[36mResume Load (0.1ms)[0m  [1mSELECT "resumes".* FROM "resumes"[0m
+  Rendered resumes/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 12:16:26 +0530
+Processing by ResumesController#index as HTML
+  [1m[35mResume Load (0.1ms)[0m  SELECT "resumes".* FROM "resumes"
+  Rendered resumes/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 12ms (Views: 11.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 12:16:28 +0530
+Processing by ResumesController#index as HTML
+  [1m[36mResume Load (0.1ms)[0m  [1mSELECT "resumes".* FROM "resumes"[0m
+  Rendered resumes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 12:16:29 +0530
+Processing by ResumesController#index as HTML
+  [1m[35mResume Load (0.1ms)[0m  SELECT "resumes".* FROM "resumes"
+  Rendered resumes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 12:16:30 +0530
+Processing by ResumesController#index as HTML
+  [1m[36mResume Load (0.2ms)[0m  [1mSELECT "resumes".* FROM "resumes"[0m
+  Rendered resumes/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 12:16:31 +0530
+Processing by ResumesController#index as HTML
+  [1m[35mResume Load (0.1ms)[0m  SELECT "resumes".* FROM "resumes"
+  Rendered resumes/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 107ms (Views: 105.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 12:16:32 +0530
+Processing by ResumesController#index as HTML
+  [1m[36mResume Load (0.2ms)[0m  [1mSELECT "resumes".* FROM "resumes"[0m
+  Rendered resumes/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 12:16:49 +0530
+Processing by ResumesController#index as HTML
+  [1m[35mResume Load (0.1ms)[0m  SELECT "resumes".* FROM "resumes"
+  Rendered resumes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/resumes/5" for 127.0.0.1 at 2016-03-09 12:16:55 +0530
+Processing by ResumesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2cIUJkGL5AnMP56SlV+e7279Elh474rQxpvefmaKZuItJQlrcQxfnXkimM0H5AHBgU2g7ngiy1LD1VHghMudZw==", "id"=>"5"}
+  [1m[36mResume Load (0.1ms)[0m  [1mSELECT  "resumes".* FROM "resumes" WHERE "resumes"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "resumes" WHERE "resumes"."id" = ?[0m  [["id", 5]]
+  [1m[35m (105.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/resumes
+Completed 302 Found in 108ms (ActiveRecord: 106.1ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 12:16:55 +0530
+Processing by ResumesController#index as HTML
+  [1m[36mResume Load (0.1ms)[0m  [1mSELECT "resumes".* FROM "resumes"[0m
+  Rendered resumes/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 11ms (Views: 10.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:16:57 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 13ms (Views: 12.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/resumes" for 127.0.0.1 at 2016-03-09 12:17:11 +0530
+Processing by ResumesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gk1oryEh65qITXwPU7EiYDBMGZs8VwYS5cXEFhtvDQ52qnXiEaZQDj1QelDBCr1O3/yrLTyaR5Dgi0uI+S72iw==", "resume"=>{"name"=>"vaibhav", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x007f3621687758 @tempfile=#<Tempfile:/tmp/RackMultipart20160309-28990-1foror2.doc>, @original_filename="754402_Resume.doc", @content_type="application/msword", @headers="Content-Disposition: form-data; name=\"resume[attachment]\"; filename=\"754402_Resume.doc\"\r\nContent-Type: application/msword\r\n">}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "resumes" ("name", "attachment", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "vaibhav"], ["attachment", "754402_Resume.doc"], ["created_at", "2016-03-09 06:47:11.589933"], ["updated_at", "2016-03-09 06:47:11.589933"]]
+  [1m[35m (182.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/resumes
+Completed 302 Found in 188ms (ActiveRecord: 182.4ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 12:17:11 +0530
+Processing by ResumesController#index as HTML
+  [1m[36mResume Load (0.1ms)[0m  [1mSELECT "resumes".* FROM "resumes"[0m
+  Rendered resumes/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:17:26 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 61ms (Views: 60.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/resumes" for 127.0.0.1 at 2016-03-09 12:17:40 +0530
+Processing by ResumesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5QcNDyy99yxwd3ae1E0KIuG5jRteCKyrS7OlzhALHuER4BBCHDpMuMVqcMFG9pUMDgk/rV7F7SlO/SpQ8krlZA==", "resume"=>{"name"=>"jayaraj", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x007f3621246c98 @tempfile=#<Tempfile:/tmp/RackMultipart20160309-28990-1hrkp5f.doc>, @original_filename="754402_Resume.doc", @content_type="application/msword", @headers="Content-Disposition: form-data; name=\"resume[attachment]\"; filename=\"754402_Resume.doc\"\r\nContent-Type: application/msword\r\n">}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "resumes" ("name", "attachment", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "jayaraj"], ["attachment", "754402_Resume.doc"], ["created_at", "2016-03-09 06:47:40.551893"], ["updated_at", "2016-03-09 06:47:40.551893"]]
+  [1m[35m (183.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/resumes
+Completed 302 Found in 189ms (ActiveRecord: 183.9ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 12:17:40 +0530
+Processing by ResumesController#index as HTML
+  [1m[36mResume Load (0.1ms)[0m  [1mSELECT "resumes".* FROM "resumes"[0m
+  Rendered resumes/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:19:42 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/resumes" for 127.0.0.1 at 2016-03-09 12:21:56 +0530
+Processing by ResumesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OgE48wGU2YOPluh+wwuGkIePF5DoIPYsJne5C8yd/UjO5iW+MRNiFzqL7iFRsBm+aD+lJujtt64jOTaVLtwGzQ==", "resume"=>{"name"=>"fahath", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x007f3621503738 @tempfile=#<Tempfile:/tmp/RackMultipart20160309-28990-1p2n0wb.doc>, @original_filename="754402_Resume.doc", @content_type="application/msword", @headers="Content-Disposition: form-data; name=\"resume[attachment]\"; filename=\"754402_Resume.doc\"\r\nContent-Type: application/msword\r\n">}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "resumes" ("name", "attachment", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "fahath"], ["attachment", "754402_Resume.doc"], ["created_at", "2016-03-09 06:51:56.404838"], ["updated_at", "2016-03-09 06:51:56.404838"]]
+  [1m[35m (177.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/resumes
+Completed 302 Found in 182ms (ActiveRecord: 178.0ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 12:21:56 +0530
+Processing by ResumesController#index as HTML
+  [1m[36mResume Load (0.1ms)[0m  [1mSELECT "resumes".* FROM "resumes"[0m
+  Rendered resumes/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 12:28:37 +0530
+Processing by ResumesController#index as HTML
+  [1m[35mResume Load (0.2ms)[0m  SELECT "resumes".* FROM "resumes"
+  Rendered resumes/index.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `to_model' for #<AttachmentUploader:0x007f362165bf18>):
+    24:          
+    25:          <tr>
+    26:             <td><%= resume.name %></td>
+    27:             <td><%= link_to "Download Resume", resume.attachment %></td>
+    28:             <td><%= button_to "Delete",  resume, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{resume.name}?" %></td>
+    29:          </tr>
+    30:          
+  app/views/resumes/index.html.erb:27:in `block in _app_views_resumes_index_html_erb___1978104017165481718_69935232612340'
+  app/views/resumes/index.html.erb:23:in `_app_views_resumes_index_html_erb___1978104017165481718_69935232612340'
+
+
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (10.5ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (70.5ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 12:28:57 +0530
+Processing by ResumesController#index as HTML
+  [1m[36mResume Load (0.2ms)[0m  [1mSELECT "resumes".* FROM "resumes"[0m
+  Rendered resumes/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:28:57 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:28:57 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:28:57 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:28:57 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:28:57 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:28:57 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:28:57 +0530
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 12:32:55 +0530
+Processing by ResumesController#index as HTML
+  [1m[35mResume Load (0.3ms)[0m  SELECT "resumes".* FROM "resumes"
+  Rendered resumes/index.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `to_model' for #<AttachmentUploader:0x007f3621347318>):
+    24:          
+    25:          <tr>
+    26:             <td><%= resume.name %></td>
+    27:             <td><%= link_to "Download Resume", resume.attachment %></td>
+    28:             <td><%= button_to "Delete",  resume, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{resume.name}?" %></td>
+    29:          </tr>
+    30:          
+  app/views/resumes/index.html.erb:27:in `block in _app_views_resumes_index_html_erb___1978104017165481718_69935230989540'
+  app/views/resumes/index.html.erb:23:in `_app_views_resumes_index_html_erb___1978104017165481718_69935230989540'
+
+
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.9ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (9.1ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/dess/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (19.6ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 12:37:05 +0530
+Processing by ResumesController#index as HTML
+  [1m[36mResume Load (0.2ms)[0m  [1mSELECT "resumes".* FROM "resumes"[0m
+  Rendered resumes/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/resumes.self-cf1fae07ffd4c3dc4c2600c86ff3176ddd3d28664530f8646f0e43d1eda79da9.css?body=1" for 127.0.0.1 at 2016-03-09 12:37:05 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-09 12:37:05 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-09 12:37:05 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-09 12:37:05 +0530
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-09 12:37:05 +0530
+
+
+Started GET "/assets/resumes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-09 12:37:05 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-09 12:37:05 +0530
+
+
+Started GET "/resumes/new" for 127.0.0.1 at 2016-03-09 12:37:29 +0530
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 58ms (Views: 56.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/resumes" for 127.0.0.1 at 2016-03-09 12:37:39 +0530
+Processing by ResumesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eTVHPi4vL9R2fHPNtH03yxHAWQ080KtdjATIpyuWF3+N0lpzHqiUQMNhdZImxqjl/nDruzwd6t+JSkc5ydfs+g==", "resume"=>{"name"=>"My resume", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x007f3621156068 @tempfile=#<Tempfile:/tmp/RackMultipart20160309-28990-n6kspb.doc>, @original_filename="754402_Resume__1_.doc", @content_type="application/msword", @headers="Content-Disposition: form-data; name=\"resume[attachment]\"; filename=\"754402_Resume__1_.doc\"\r\nContent-Type: application/msword\r\n">}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "resumes" ("name", "attachment", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My resume"], ["attachment", "754402_Resume__1_.doc"], ["created_at", "2016-03-09 07:07:39.033567"], ["updated_at", "2016-03-09 07:07:39.033567"]]
+  [1m[35m (174.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/resumes
+Completed 302 Found in 180ms (ActiveRecord: 175.1ms)
+
+
+Started GET "/resumes" for 127.0.0.1 at 2016-03-09 12:37:39 +0530
+Processing by ResumesController#index as HTML
+  [1m[36mResume Load (0.1ms)[0m  [1mSELECT "resumes".* FROM "resumes"[0m
+  Rendered resumes/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.1ms)
